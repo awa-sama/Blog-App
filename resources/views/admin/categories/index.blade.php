@@ -46,7 +46,7 @@
     </div>
 
     <!-- Create Category Modal -->
-    <div id="create-category-modal" class="fixed inset-0 hidden bg-gray-800 bg-opacity-75 z-50 items-center justify-center">
+    <div id="create-category-modal" class="fixed inset-0 hidden bg-gray-800 bg-opacity-75 z-50 lg-flex items-center justify-center">
         <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 class="text-xl font-bold mb-4">Tambah Kategori</h2>
             @if ($errors->any())
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Edit Category Modal -->
-    <div id="edit-category-modal" class="fixed inset-0 hidden bg-gray-800 bg-opacity-75 z-50 items-center justify-center">
+    <div id="edit-category-modal" class="fixed inset-0 hidden bg-gray-800 bg-opacity-75 z-50 lg-flex items-center justify-center">
         <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
             <h2 class="text-xl font-bold mb-4">Edit Kategori</h2>
             @if ($errors->any())
