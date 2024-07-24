@@ -1,9 +1,9 @@
 
 <h2 class="text-xl font-bold mb-4">Popular News</h2>
 <ul>
-    @foreach ($popularNews as $news)
+    @foreach ($popularNews as $articles)
         <li class="mb-2">
-            <a href="#" class="text-blue-400 hover:text-blue-600">{{ $news['title'] }}</a>
+            <a href="#" class="text-blue-400 hover:text-blue-600">{{ $articles['title'] }}</a>
         </li>
     @endforeach
 </ul>

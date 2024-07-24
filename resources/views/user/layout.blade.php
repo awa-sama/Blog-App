@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Talenthub</title>
-    <link rel="icon" href="https://flowbite.com/docs/images/logo.svg" type="image/svg+xml">
     @vite(['resources/css/app.css','resources/js/app.js'])
+    <link rel="icon" href="https://img.logoipsum.com/249.svg" type="image/svg+xml">
+    <title>Blog App</title>
 </head>
 <body class="bg-gray-100 flex flex-col min-h-screen">
     <!-- Header -->

@@ -1,8 +1,8 @@
 <nav class="bg-white border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 relative">
     <a href="{{ url('/') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 md:h-8" alt="Flowbite Logo" />
-      <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">News Talenthub</span>
+      <img src="https://img.logoipsum.com/249.svg" class="h-6 md:h-8" alt="Logoipsum" />
+      <span class="self-center text-lg md:text-2xl font-semibold whitespace-nowrap dark:text-white">Blog Apps</span>
     </a>
     <div class="flex items-center space-x-4 md:order-2">
       <button type="button" aria-controls="search-bar" aria-expanded="false" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 block sm:hidden" id="search-toggle">

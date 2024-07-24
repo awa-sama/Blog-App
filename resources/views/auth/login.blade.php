@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - News Talenthub</title>
-    <link rel="icon" href="https://flowbite.com/docs/images/logo.svg" type="image/svg+xml">
+    <title>Login - Blog App</title>
+    <link rel="icon" href="https://img.logoipsum.com/249.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
 </head>
@@ -12,7 +12,7 @@
     <div class="w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
         <div class="p-6">
             <div class="flex justify-center mb-4">
-                <img src="https://flowbite.com/docs/images/logo.svg" alt="News Talenthub Logo" class="h-12">
+                <img src="https://img.logoipsum.com/249.svg" alt="Blog App Logo" class="h-12">
             </div>
             <h2 class="text-center text-3xl font-extrabold text-gray-900 dark:text-white mb-6">Masuk ke akun Anda</h2>
             <form method="POST" action="{{ route('login.post') }}">
