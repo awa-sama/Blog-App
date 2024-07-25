@@ -13,7 +13,6 @@ class News extends Model
         'title',
         'body',
         'category_id',
-        'region_id',
         'image_url',
         'image_caption',
         'date',
@@ -23,10 +22,5 @@ class News extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function region()
-    {
-        return $this->belongsTo(Region::class);
     }
 }

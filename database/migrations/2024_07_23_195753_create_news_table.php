@@ -13,7 +13,6 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->foreignId('category_id')->constrained('categories');
-            $table->foreignId('region_id')->constrained('regions');
             $table->string('image_url');
             $table->string('image_caption');
             $table->date('date');

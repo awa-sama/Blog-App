@@ -21,14 +21,6 @@
             </select>
         </div>
         <div class="mb-4">
-            <label for="region_id" class="block text-gray-700">Wilayah:</label>
-            <select id="region_id" name="region_id" class="mt-1 block w-full" required>
-                @foreach($regions as $region)
-                    <option value="{{ $region->id }}">{{ $region->name }}</option>
-                @endforeach
-            </select>
-        </div>
-        <div class="mb-4">
             <label for="image" class="block text-gray-700">Gambar:</label>
             <input type="file" id="image" name="image" class="mt-1 block w-full" required>
         </div>

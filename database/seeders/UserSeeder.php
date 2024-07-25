@@ -13,8 +13,7 @@ class UserSeeder extends Seeder
     {
         // Ambil role dari database
         $adminRole = Role::where('name', 'admin')->first();
-        $editorRole = Role::where('name', 'editor')->first();
-        $wartawanRole = Role::where('name', 'wartawan')->first();
+        $userRole = Role::where('name', 'user')->first();
 
         // Buat beberapa pengguna dengan peran yang sesuai
         User::create([
@@ -23,28 +22,28 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
             'phone_number' => '1234567890',
             'address' => 'Admin Address',
-            'profile_photo' => 'images/pic-admin.png',
+            'profile_photo' => 'K:\Laragon\www\news-talenthub\public\images\bloom__testimonial-01.jpg',
             'role_id' => $adminRole->id,
         ]);
 
         User::create([
-            'name' => 'Anggi Marito',
-            'email' => 'editor@mail.com',
+            'name' => 'Hatsune Miku',
+            'email' => 'hatsune39@mail.com',
             'password' => Hash::make('password'),
-            'phone_number' => '0987654321',
-            'address' => 'Editor Address',
-            'profile_photo' => 'images/pic-editor.png',
-            'role_id' => $editorRole->id,
+            'phone_number' => '39393939393939',
+            'address' => 'she live in my heart',
+            'profile_photo' => 'K:\Laragon\www\news-talenthub\public\images\bloom__testimonial-02.jpg',
+            'role_id' => $userRole->id,
         ]);
 
         User::create([
-            'name' => 'Bernadya',
-            'email' => 'wartawan@mail.com',
+            'name' => 'Megurine Luka',
+            'email' => 'lukamegurine@mail.com',
             'password' => Hash::make('password'),
             'phone_number' => '1122334455',
-            'address' => 'Wartawan Address',
-            'profile_photo' => 'images/pic-wartawan.png',
-            'role_id' => $wartawanRole->id,
+            'address' => 'she live in my heart too',
+            'profile_photo' => 'K:\Laragon\www\news-talenthub\public\images\bloom__testimonial-04.jpg',
+            'role_id' => $userRole->id,
         ]);
     }
 }

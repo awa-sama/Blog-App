@@ -15,7 +15,6 @@
                     <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Judul</th>
                     <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Kategori</th>
                     <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Tanggal</th>
-                    <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Wilayah</th>
                     <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Dilihat</th>
                     <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Aksi</th>
                 </tr>
@@ -34,9 +33,6 @@
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                         {{ $newsItem->date }}
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
-                        {{ $newsItem->region->name }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
                         {{ $newsItem->views }}

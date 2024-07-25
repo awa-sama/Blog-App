@@ -15,35 +15,35 @@
 
     <div class="container mx-auto py-4">
         <!-- For large screens -->
-        <div class="hidden lg:grid grid-cols-12 gap-4">
-            <!-- Main Content and Slider -->
-            <main class="col-span-9">
-                @yield('content')
-            </main>
-
-            <!-- Sidebar -->
-            <aside class="col-span-3 bg-gray-100 bg-opacity-85 divide-y divide-gray-100 text-gray-900 p-4 h-full rounded-lg shadow-lg">
-                @include('partials.user.sidebar', ['popularNews' => $popularNews, 'categories' => $categories])
-            </aside>
-        </div>
-
-        <!-- For small screens -->
-        <div class="lg:hidden grid grid-cols-1 gap-4">
+        <div>
             <!-- Main Content and Slider -->
             <main>
                 @yield('content')
             </main>
 
-            <!-- Sidebar -->
+            {{-- <!-- Sidebar -->
+            <aside class="col-span-3 bg-gray-100 bg-opacity-85 divide-y divide-gray-100 text-gray-900 p-4 h-full rounded-lg shadow-lg">
+                @include('partials.user.sidebar', ['popularNews' => $popularNews, 'categories' => $categories])
+            </aside> --}}
+        </div>
+
+        <!-- Footer -->
+        @include('partials.user.footer')
+
+        <!-- For small screens -->
+        {{-- <div class="lg:hidden grid grid-cols- gap-4">
+            <!-- Main Content and Slider -->
+            <main>
+                @yield('content')
+            </main> --}}
+
+            {{-- <!-- Sidebar -->
             <aside class="col-span-3 bg-gray-100 bg-opacity-85 divide-y divide-gray-100 text-gray-900 p-4 h-full rounded-lg shadow-lg">
                 @include('partials.user.sidebar', ['popularNews' => $popularNews, 'categories' => $categories])
             </aside>
         </div>
-    </div>
+    </div> --}}
 
-    <!-- Footer -->
-    @include('partials.user.footer')
-    
     <!-- Import Flowbite script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.5.3/flowbite.min.js"></script>
 </body>

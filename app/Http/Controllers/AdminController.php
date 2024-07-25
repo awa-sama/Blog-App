@@ -30,12 +30,6 @@ class AdminController extends Controller
         return view('admin.categories');
     }
 
-    public function manageRegions()
-    {
-        // Logic untuk mengambil data kategori
-        return view('admin.regions');
-    }
-
     public function manageUsers()
     {
         return view('admin.users');

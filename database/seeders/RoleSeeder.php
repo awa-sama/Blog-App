@@ -10,7 +10,7 @@ class RoleSeeder extends Seeder
     public function run()
     {
         // Definisikan roles yang akan ditambahkan
-        $roles = ['admin', 'editor', 'wartawan'];
+        $roles = ['admin', 'user'];
 
         // Loop untuk menambahkan roles ke database
         foreach ($roles as $role) {

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\Region;
 use App\Models\News;
 use Illuminate\Support\Facades\Storage;
 
@@ -12,15 +11,14 @@ class NewsController extends Controller
 {
     public function index()
     {
-        $news = News::with(['category', 'region'])->paginate(10);
+        $news = News::with(['category'])->paginate(10);
         return view('admin.news.index', compact('news'));
     }
 
     public function create()
     {
         $categories = Category::all();
-        $regions = Region::all();
-        return view('admin.news.create', compact('categories', 'regions'));
+        return view('admin.news.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -29,7 +27,6 @@ class NewsController extends Controller
             'title' => 'required',
             'body' => 'required',
             'category_id' => 'required|exists:categories,id',
-            'region_id' => 'required|exists:regions,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'image_caption' => 'required',
             'date' => 'required',
@@ -41,7 +38,6 @@ class NewsController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'category_id' => $request->category_id,
-            'region_id' => $request->region_id,
             'image_url' => $imagePath,
             'image_caption' => $request->image_caption,
             'date' => $request->date,
@@ -54,8 +50,7 @@ class NewsController extends Controller
     {
         $news = News::findOrFail($id);
         $categories = Category::all();
-        $regions = Region::all();
-        return view('admin.news.edit', compact('news', 'categories', 'regions'));
+        return view('admin.news.edit', compact('news', 'categories'));
     }
 
     public function update(Request $request, $id)
@@ -64,7 +59,6 @@ class NewsController extends Controller
             'title' => 'required',
             'body' => 'required',
             'category_id' => 'required|exists:categories,id',
-            'region_id' => 'required|exists:regions,id',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'image_caption' => 'required',
             'date' => 'required',
@@ -83,7 +77,6 @@ class NewsController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'category_id' => $request->category_id,
-            'region_id' => $request->region_id,
             'image_caption' => $request->image_caption,
             'date' => $request->date,
         ]);
