@@ -62,7 +62,7 @@
     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
             <li class="me-2" role="presentation">
-                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="editor-choice-tab" data-tabs-target="#editor-choice" type="button" role="tab" aria-controls="editor-choice" aria-selected="true">Feature</button>
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="editor-choice-tab" data-tabs-target="#editor-choice" type="button" role="tab" aria-controls="editor-choice" aria-selected="true">Edukasi</button>
             </li>
             <li class="me-2" role="presentation">
                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id="komunitas-tab" data-tabs-target="#komunitas" type="button" role="tab" aria-controls="komunitas" aria-selected="false">Komunitas</button>
@@ -82,7 +82,7 @@
                 </div>
             @else
                 <div class="mb-4">
-                    <h2 class="text-xl font-bold">Belum ada tulisan feature</h2>
+                    <h2 class="text-xl font-bold">Belum ada tulisan edukasi</h2>
                 </div>
             @endif
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

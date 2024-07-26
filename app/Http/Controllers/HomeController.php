@@ -15,13 +15,13 @@ class HomeController extends Controller
         $news = News::with(['category', 'region'])->latest()->get();
 
         // Get categories by name
-        $featureCategory = Category::where('name', 'edukasi')->first();
+        $edukasiCategory = Category::where('name', 'edukasi')->first();
         $komunitasCategory = Category::where('name', 'komunitas')->first();
         $opiniCategory = Category::where('name', 'opini')->first();
 
         // Get news based on the categories
-        $editorChoiceMain = News::where('category_id', $featureCategory->id)->latest()->first();
-        $editorChoiceNews = News::where('category_id', $featureCategory->id)->latest()->take(5)->get();
+        $editorChoiceMain = News::where('category_id', $edukasiCategory->id)->latest()->first();
+        $editorChoiceNews = News::where('category_id', $edukasiCategory->id)->latest()->take(5)->get();
 
         $komunitasMain = News::where('category_id', $komunitasCategory->id)->latest()->first();
         $komunitasNews = News::where('category_id', $komunitasCategory->id)->latest()->take(5)->get();
