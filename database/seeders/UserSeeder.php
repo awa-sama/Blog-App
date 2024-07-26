@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
             'phone_number' => '1234567890',
             'address' => 'Admin Address',
-            'profile_photo' => 'K:\Laragon\www\news-talenthub\public\images\bloom__testimonial-01.jpg',
+            'profile_photo' => 'images\bloom__testimonial-01.jpg',
             'role_id' => $adminRole->id,
         ]);
 
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
             'phone_number' => '39393939393939',
             'address' => 'she live in my heart',
-            'profile_photo' => 'K:\Laragon\www\news-talenthub\public\images\bloom__testimonial-02.jpg',
+            'profile_photo' => 'images\bloom__testimonial-02.jpg',
             'role_id' => $userRole->id,
         ]);
 
@@ -42,7 +42,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
             'phone_number' => '1122334455',
             'address' => 'she live in my heart too',
-            'profile_photo' => 'K:\Laragon\www\news-talenthub\public\images\bloom__testimonial-04.jpg',
+            'profile_photo' => 'images\bloom__testimonial-04.jpg',
             'role_id' => $userRole->id,
         ]);
     }

@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-6 rounded-lg shadow-md text-white">
             <h2 class="text-lg font-semibold">Total Berita</h2>
             <p class="text-2xl font-bold mt-2">{{ $totalNews }}</p>

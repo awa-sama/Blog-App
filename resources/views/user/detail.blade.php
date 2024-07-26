@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <!-- Related News Section -->
+            {{-- <!-- Related News Section -->
             <div class="mt-12">
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related News</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
@@ -58,7 +58,7 @@
                             </div>
                         </a>
                     @endforeach
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

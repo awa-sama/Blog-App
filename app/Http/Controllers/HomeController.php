@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Models\News;
 use App\Models\Category;
-use App\Models\Region;
 
 class HomeController extends Controller
 {
+    public function detail($id)
+    {
+        $newsItem = News::find($id);
+
+        if (!$newsItem) {
+            abort(404, 'News item not found.');
+        }
+
+        return view('user.detail', compact('newsItem'));
+    }
+    
     public function index()
     {
         $news = News::with(['category'])->latest()->get();
@@ -28,16 +37,6 @@ class HomeController extends Controller
 
         $opiniMain = $opiniCategory ? News::where('category_id', $opiniCategory->id)->latest()->first() : null;
         $opiniNews = $opiniCategory ? News::where('category_id', $opiniCategory->id)->latest()->take(5)->get() : collect();
-
-        // // Get news based on the categories
-        // $editorChoiceMain = News::where('category_id', $featureCategory->id)->latest()->first();
-        // $editorChoiceNews = News::where('category_id', $featureCategory->id)->latest()->take(5)->get();
-
-        // $komunitasMain = News::where('category_id', $komunitasCategory->id)->latest()->first();
-        // $komunitasNews = News::where('category_id', $komunitasCategory->id)->latest()->take(5)->get();
-
-        // $opiniMain = News::where('category_id', $opiniCategory->id)->latest()->first();
-        // $opiniNews = News::where('category_id', $opiniCategory->id)->latest()->take(5)->get();
 
         $perPage = 6;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
