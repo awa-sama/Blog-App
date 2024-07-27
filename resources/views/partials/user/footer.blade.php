@@ -1,33 +1,20 @@
 <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800 rounded-lg">
     <div class="mx-auto max-w-screen-xl text-center">
-        <a href="{{ url('/') }}" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+        <a href="{{ url('/') }}" class="flex justify-center  py-2 items-center text-2xl font-semibold text-gray-900 dark:text-white">
                 <img src="https://img.logoipsum.com/249.svg" class="h-6 md:h-8" alt="Logoipsum" />
                 <span class="self-center lg:text-xl md:text-lg sm:text-sm font-semibold whitespace-nowrap dark:text-white">Blog Apps</span>
         </a>
-        <p class="my-6 text-gray-500 dark:text-gray-400">A version pinnacle sea snare pinnacle transvaluation. Truth noble strong morality.</p>
-        <ul class="flex justify-center items-center mb-6 text-gray-900 dark:text-white">
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+        <p class="my-6 py-2 text-gray-500 dark:text-gray-400">A version pinnacle sea snare pinnacle transvaluation. Truth noble strong morality.</p>
+        <ul class="flex justify-center  py-2 items-center mb-6 text-gray-900 dark:text-white">
+            <li class="px-2">
+                <a href="{{ url('/') }}" class="mr-4 hover:underline md:mr-6 ">Home</a>
             </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Premium</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6 ">Campaigns</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Blog</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Affiliate Program</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">FAQs</a>
-            </li>
-            <li>
-                <a href="#" class="mr-4 hover:underline md:mr-6">Contact</a>
-            </li>
+            @foreach ($categories->take(3) as $category)
+                    <li class="px-2">
+                        <a href="{{ route('category', ['category' => strtolower($category->name)]) }}" class="mr-4 hover:underline md:mr-6">{{ $category->name }}</a>
+                    </li>
+                @endforeach
         </ul>
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#" class="hover:underline">Flowbite™</a>. All Rights Reserved.</span>
+        <span class="text-sm  py-2 text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="{{ url('/') }}" class="hover:underline">Blog Apps™</a>. All Rights Reserved.</span>
     </div>
   </footer>

@@ -7,36 +7,25 @@ use App\Models\News;
 use App\Models\Category;
 
 class HomeController extends Controller
-{
-    public function detail($id)
-    {
-        $newsItem = News::find($id);
-
-        if (!$newsItem) {
-            abort(404, 'News item not found.');
-        }
-
-        return view('user.detail', compact('newsItem'));
-    }
-    
+{    
     public function index()
     {
         $news = News::with(['category'])->latest()->get();
 
-        // Get categories by name
-        $featureCategory = Category::where('name', 'Stories')->first();
-        $komunitasCategory = Category::where('name', 'komunitas')->first();
-        $opiniCategory = Category::where('name', 'opini')->first();
+        // // Get categories by name
+        // $storiesCategory = Category::where('name', 'stories')->first();
+        // $travelingCategory = Category::where('name', 'traveling')->first();
+        // $foodsCategory = Category::where('name', 'foodss')->first();
 
-        // Add checks to ensure categories are not null
-        $editorChoiceMain = $featureCategory ? News::where('category_id', $featureCategory->id)->latest()->first() : null;
-        $editorChoiceNews = $featureCategory ? News::where('category_id', $featureCategory->id)->latest()->take(5)->get() : collect();
+        // // Get news based on the categories
+        // $editorChoiceMain = News::where('category_id', $storiesCategory->id)->latest()->first();
+        // $editorChoiceNews = News::where('category_id', $storiesCategory->id)->latest()->take(5)->get();
 
-        $komunitasMain = $komunitasCategory ? News::where('category_id', $komunitasCategory->id)->latest()->first() : null;
-        $komunitasNews = $komunitasCategory ? News::where('category_id', $komunitasCategory->id)->latest()->take(5)->get() : collect();
+        // $travelingMain = $travelingCategory ? News::where('category_id', $travelingCategory->id)->latest()->first() : null;
+        // $travelingNews = $travelingCategory ? News::where('category_id', $travelingCategory->id)->latest()->take(5)->get() : collect();
 
-        $opiniMain = $opiniCategory ? News::where('category_id', $opiniCategory->id)->latest()->first() : null;
-        $opiniNews = $opiniCategory ? News::where('category_id', $opiniCategory->id)->latest()->take(5)->get() : collect();
+        // $foodsMain = $foodsCategory ? News::where('category_id', $foodsCategory->id)->latest()->first() : null;
+        // $foodsNews = $foodsCategory ? News::where('category_id', $foodsCategory->id)->latest()->take(5)->get() : collect();
 
         $perPage = 6;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
@@ -48,7 +37,7 @@ class HomeController extends Controller
         $popularNews = News::with('category')->orderBy('views', 'desc')->take(5)->get();
         $categories = Category::all();
 
-        return view('user.home', compact('news', 'paginatedNews', 'popularNews', 'categories', 'editorChoiceMain', 'editorChoiceNews', 'komunitasMain', 'komunitasNews', 'opiniMain', 'opiniNews'));
+        return view('user.home', compact('news', 'paginatedNews', 'popularNews', 'categories'));
     }
 
     public function category($category)
@@ -60,5 +49,15 @@ class HomeController extends Controller
         $categories = Category::all();
     
         return view('user.category', compact('category', 'paginatedNews', 'popularNews', 'categories'));
+    }
+    
+    public function detail($id)
+    {
+        $newsItem = News::with(['category'])->findOrFail($id);
+        $popularNews = News::with('category')->orderBy('views', 'desc')->take(5)->get();
+        $categories = Category::all();
+        $relatedNews = News::where('category_id', $newsItem->category_id)->where('id', '!=', $id)->take(3)->get();
+
+        return view('user.detail', compact('newsItem', 'popularNews', 'categories', 'relatedNews'));
     }
 }
